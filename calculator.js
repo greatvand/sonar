@@ -1,18 +1,45 @@
+// Simple calculator with intentional issues for SonarCloud demo
+
 function add(a, b) {
   return a + b;
 }
 
-function divide(a, b) {
-  if (b === 0) {
-    console.log("Division by zero!");
-    return null;
+function subtract(a, b) {
+  return a - b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+// duplicate logic – SonarCloud should flag this
+function sum(a, b) {
+  return a + b;
+}
+
+// unused function – dead code
+function unusedHelper() {
+  console.log("This function is never used");
+}
+
+// complex function – should trigger cognitive complexity warning
+function validate(input) {
+  if (input > 0) {
+    if (input < 100) {
+      if (input % 2 === 0) {
+        if (input !== 50) {
+          if (input !== 20) {
+            return true;
+          }
+        }
+      }
+    }
   }
-  return a / b;
+  return false;
 }
 
-function duplicateAdd(x, y) {
-  const res = x + y;
-  return res;
-}
+// bad practice: console.log
+console.log("Debugging: This log should not be in production");
 
-module.exports = { add, divide, duplicateAdd };
+// export only required functions
+module.exports = { add, subtract, multiply, sum, validate };
