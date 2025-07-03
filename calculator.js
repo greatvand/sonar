@@ -1,9 +1,18 @@
-const { add, divide } = require('./calculator');
+function add(a, b) {
+  return a + b;
+}
 
-test('add works', () => {
-  expect(add(2, 3)).toBe(5);
-});
+function divide(a, b) {
+  if (b === 0) {
+    console.log("Division by zero!");
+    return null;
+  }
+  return a / b;
+}
 
-test('divide works', () => {
-  expect(divide(10, 2)).toBe(5);
-});
+function duplicateAdd(x, y) {
+  const res = x + y;
+  return res;
+}
+
+module.exports = { add, divide, duplicateAdd };
