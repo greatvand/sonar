@@ -1,0 +1,12 @@
+{
+  "name": "sonar-node-demo",
+  "version": "1.0.0",
+  "description": "Tiny Node.js project for a SonarCloud demo",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
