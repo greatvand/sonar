@@ -1,4 +1,4 @@
-name: New SonarCloud Scan
+name: SonarCloud Scan
 
 on:
   push:
@@ -43,5 +43,6 @@ jobs:
             -Dsonar.organization=${{ secrets.SONAR_ORG }}
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.coverage.exclusions=**/*.test.js
+            -Dsonar.exclusions=coverage/**
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
