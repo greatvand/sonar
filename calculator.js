@@ -5,22 +5,33 @@ function add(a, b) {
 }
 
 function insecureEval(input) {
-  // Security hotspot
+  // 🚨 Security Hotspot
   return eval(input);
 }
 
-function duplicateLogic(x, y) {
-  // Duplicate logic
+function duplicateSum(x, y) {
+  // 🚨 Maintainability: Duplicate logic with add()
   return x + y;
 }
 
-function unusedCode() {
+function unusedFunction() {
+  // 🚨 Code Smell: Unused function
   const temp = 42;
   console.log("This function is never used");
 }
 
-function brokenSyntax() {
-  let x = ; // Syntax error
+function overlyNested(input) {
+  // 🚨 Cognitive complexity
+  if (input > 0) {
+    if (input < 10) {
+      if (input !== 5) {
+        if (input % 2 === 0) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
 }
 
-module.exports = { add, insecureEval, duplicateLogic };
+module.exports = { add, insecureEval, duplicateSum, overlyNested };
