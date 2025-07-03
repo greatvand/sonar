@@ -30,7 +30,9 @@ jobs:
       - run: npm ci
 
       # 4 — Run tests & generate coverage (lcov)
-      - run: npm test
+      - name: Run tests and generate coverage
+        run: npm test -- --coverage
+
 
       # 5 — SonarCloud scan
       - name: SonarCloud Scan
